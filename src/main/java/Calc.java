@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
 import static java.lang.Integer.parseInt;
@@ -13,13 +14,24 @@ import static java.lang.Integer.parseInt;
 public class Calc {
     private String findSeparator(String input){
 
-        if((input.split("\n")).length > 1)
+        List<Character> tempString = new ArrayList<>();
+        char[] tempChar = input.toCharArray();
+        for (char oneChar : tempChar){
+            if (oneChar<'0'||oneChar>'9')
+                tempString.add(oneChar);
+        }
+
+        String outString = tempString.stream().map(e->e.toString()).collect(Collectors.joining());
+
+        return outString;
+
+        //Poprzednio
+        /*if((input.split("\n")).length > 1)
             return "\n";
         else if ((input.split("\\$")).length > 1)
             return "\\$";
         else if ((input.split(" ")).length > 1)
-            return " ";
-        return null;
+            return " ";*/
     }
 
     int add(String input){
