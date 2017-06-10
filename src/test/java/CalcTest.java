@@ -90,6 +90,19 @@ public class CalcTest {
 
         //then
         assertEquals(expectedResult, result);
+    }
+    @Test
+    public void addTest7() {
+        //given
+        String input = new String("105   1");
+        int expectedResult = 106;
+
+        //when
+        int result = calc.add(input);
+
+        //then
+        assertEquals(expectedResult, result);
 
     }
+
 }
