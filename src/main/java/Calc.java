@@ -31,10 +31,13 @@ public class Calc {
         List <Integer> params = new ArrayList<Integer>();
         for(String in : inputParams){
             Integer param = parseInt(in);
+            if (param >1000){
+                param = 0;
+                System.out.println("Liczba większa od 1000");
+            }
             params.add(param);
+
         }
-        if (inputParams >1000)
-            input
         int result = 0;
         for(Integer param : params){
             result = result+param;

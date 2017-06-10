@@ -82,14 +82,14 @@ public class CalcTest {
     @Test
     public void addTest6() {
         //given
-        String input = new String("1001 8");
-        int expectedResult = 8;
+        String input = new String("1005 1");
+        int expectedResult = 1;
 
         //when
         int result = calc.add(input);
 
         //then
-        assertEquals(input, result);
+        assertEquals(expectedResult, result);
 
     }
 }
